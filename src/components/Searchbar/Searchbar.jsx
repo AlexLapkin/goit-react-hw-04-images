@@ -5,21 +5,9 @@ import { useState } from 'react';
 const Searchbar = ({ onSubmit }) => {
   const [searchWord, setSearchWord] = useState('');
 
-  //class Searchbar extends Component {
-  //  state = {
-  //    searchWord: '',
-  //  };
-
   const handleSubmit = event => {
     event.preventDefault();
-    //console.log(searchWord);
     onSubmit(searchWord);
-
-    //this.props.onSubmit(this.state.searchWord);
-
-    //this.setState({
-    //  searchWord: '',
-    //})
   };
 
   const handleInputChange = event => {
