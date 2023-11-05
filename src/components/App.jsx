@@ -20,8 +20,8 @@ export const App = () => {
   const per_page = 12;
 
   const fetchGallery = async (searchWord, page) => {
-    setPrevSearchWord(searchWord);
     setIsLoading(true);
+    setPrevSearchWord(searchWord);
 
     if (!searchWord) {
       setIsLoading(false);
