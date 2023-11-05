@@ -105,7 +105,7 @@ export const App = () => {
 
       {isLoading && <Loader />}
 
-      {gallery && onLoadMore && !isLoading && (
+      {gallery && onLoadMore && !isLoading && !error && (
         <Button onClickLoadMore={onClickLoadMore} />
       )}
 
