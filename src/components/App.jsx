@@ -20,13 +20,12 @@ export const App = () => {
   const per_page = 12;
 
   const fetchGallery = async (searchWord, page) => {
-    setIsLoading(true);
-    setPrevSearchWord(searchWord);
-
     if (!searchWord) {
       setIsLoading(false);
       return;
     }
+    setIsLoading(true);
+    setPrevSearchWord(searchWord);
     try {
       const { data } = await fetchImage(searchWord, page);
       const { totalHits } = data;
@@ -90,7 +89,7 @@ export const App = () => {
 
     setSearchWord(searchWord);
     setGallery(prevState => (searchWord === prevSearchWord ? prevState : null));
-    setPage(prevState => (prevSearchWord !== searchWord ? 1 : prevState));
+    setPage(prevState => (searchWord !== prevSearchWord ? 1 : prevState));
   };
 
   useEffect(() => {
